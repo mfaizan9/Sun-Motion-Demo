@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sun Motions Simulator</title>
+  <link rel="stylesheet" href="foundation/kl-unl.css">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <div class="app-shell__backdrop" aria-hidden="true"></div>
+
+    <kl-unl-masthead sim-id="sunmotions" json-url="foundation/contents.json"></kl-unl-masthead>
+
+    <main class="app-layout">
+
+      <!-- LEFT COLUMN: horizon diagram + information -->
+      <div class="app-layout__left">
+
+        <section class="panel panel--size" aria-labelledby="diagram-heading">
+          <h2 class="panel__heading" id="diagram-heading">Horizon Diagram</h2>
+          <div class="panel__canvas-wrap">
+            <canvas id="sphere-canvas" tabindex="0" role="img"
+                    aria-label="Horizon diagram of the sky"
+                    aria-describedby="sphere-desc"></canvas>
+            <p id="sphere-desc" class="sr-only" aria-live="off"></p>
+          </div>
+          <p class="panel__help">
+            Drag the diagram to rotate your view of the sky. With the keyboard, focus the
+            diagram and use the arrow keys to rotate. You can also drag the sun disk to change
+            the time of day or day of year (selected in General Settings); keyboard users can
+            use the Time of Day and Day of Year controls instead.
+          </p>
+        </section>
+
+        <section class="panel" aria-labelledby="info-heading">
+          <h2 class="panel__heading" id="info-heading">Information</h2>
+          <div class="sim-panel-body">
+            <p id="info-sentence" class="sim-info-sentence"></p>
+
+            <div class="sim-readout-grid">
+              <div class="sim-readout">
+                <span class="sim-readout__label">sun&rsquo;s altitude:</span>
+                <span class="sim-readout__value" id="ro-altitude"></span>
+              </div>
+              <div class="sim-readout">
+                <span class="sim-readout__label">sun&rsquo;s azimuth:</span>
+                <span class="sim-readout__value" id="ro-azimuth"></span>
+              </div>
+              <div class="sim-readout">
+                <span class="sim-readout__label">sun&rsquo;s right ascension:</span>
+                <span class="sim-readout__value" id="ro-ra"></span>
+              </div>
+              <div class="sim-readout">
+                <span class="sim-readout__label">sun&rsquo;s declination:</span>
+                <span class="sim-readout__value" id="ro-dec"></span>
+              </div>
+              <div class="sim-readout">
+                <span class="sim-readout__label">equation of time:</span>
+                <span class="sim-readout__value" id="ro-eot"></span>
+              </div>
+              <div class="sim-readout">
+                <span class="sim-readout__label">sidereal time:</span>
+                <span class="sim-readout__value" id="ro-sidereal"></span>
+              </div>
+              <div class="sim-readout">
+                <span class="sim-readout__label">sun&rsquo;s hour angle:</span>
+                <span class="sim-readout__value" id="ro-hourangle"></span>
+              </div>
+            </div>
+
+            <div class="control-choice sim-choice">
+              <input type="checkbox" id="show-analemma">
+              <label for="show-analemma">show analemma</label>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- RIGHT COLUMN: controls -->
+      <div class="app-layout__right">
+
+        <section class="panel" aria-labelledby="timeloc-heading">
+          <h2 class="panel__heading" id="timeloc-heading">Time and Location Controls</h2>
+
+          <!-- Day of year -->
+          <fieldset class="control-fieldset">
+            <legend class="control-fieldset__legend">the day of year:</legend>
+            <div class="control-row sim-field-row">
+              <label class="control-row__label" for="month-select">month</label>
+              <select id="month-select" class="control-row__input sim-select">
+                <option value="0">January</option>
+                <option value="1">February</option>
+                <option value="2">March</option>
+                <option value="3">April</option>
+                <option value="4">May</option>
+                <option value="5">June</option>
+                <option value="6">July</option>
+                <option value="7">August</option>
+                <option value="8">September</option>
+                <option value="9">October</option>
+                <option value="10">November</option>
+                <option value="11">December</option>
+              </select>
+              <label class="control-row__label" for="day-input">day</label>
+              <input type="number" id="day-input" class="control-row__input sim-num" min="1" max="31" step="1" inputmode="numeric">
+            </div>
+            <div class="doy-slider-wrap">
+              <div class="doy-slider" id="doy-slider" role="slider" tabindex="0"
+                   aria-label="day of year"
+                   aria-valuemin="0" aria-valuemax="364" aria-valuenow="146" aria-valuetext="">
+                <div class="doy-slider__months" id="doy-months" aria-hidden="true"></div>
+                <div class="doy-slider__cursor" id="doy-cursor" aria-hidden="true"></div>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="sim-timeloc-row">
+
+            <!-- Time of day -->
+            <fieldset class="control-fieldset sim-tl-cell">
+              <legend class="control-fieldset__legend">the time of day:</legend>
+              <div class="control-row sim-entry-row">
+                <label class="control-row__label sr-only" for="hour-input">hour, 0 to 23</label>
+                <input type="number" id="hour-input" class="control-row__input sim-time-box"
+                       min="0" max="23" step="1" inputmode="numeric">
+                <span class="sim-colon" aria-hidden="true">:</span>
+                <label class="control-row__label sr-only" for="minute-input">minute, 0 to 59</label>
+                <input type="number" id="minute-input" class="control-row__input sim-time-box"
+                       min="0" max="59" step="1" inputmode="numeric">
+              </div>
+              <div class="sim-clock-wrap">
+                <canvas id="clock-canvas" class="sim-clock" role="img"
+                        aria-label="Analog clock showing the time of day"></canvas>
+              </div>
+              <p class="sim-readout-line"><span class="sim-readout__value" id="ro-time12"></span></p>
+            </fieldset>
+
+            <!-- Latitude -->
+            <fieldset class="control-fieldset sim-tl-cell">
+              <legend class="control-fieldset__legend">the observer&rsquo;s latitude:</legend>
+              <div class="control-row sim-entry-row">
+                <label class="control-row__label sr-only" for="lat-input">observer&rsquo;s latitude in degrees</label>
+                <input type="number" id="lat-input" class="control-row__input sim-lat-box"
+                       min="0" max="90" step="0.1" inputmode="decimal">
+                <label class="sr-only" for="ns-select">hemisphere</label>
+                <select id="ns-select" class="sim-select sim-hemi">
+                  <option value="N">&deg; N</option>
+                  <option value="S">&deg; S</option>
+                </select>
+              </div>
+              <div class="lat-map-outer">
+                <div class="lat-map-wrap">
+                  <img id="lat-map" src="assets/worldmap.png" alt="" width="250" height="125" draggable="false">
+                  <div id="lat-line" class="lat-line" role="slider" tabindex="0"
+                       aria-label="observer latitude on world map"
+                       aria-valuemin="-90" aria-valuemax="90" aria-valuenow="40.8" aria-valuetext=""></div>
+                </div>
+              </div>
+            </fieldset>
+
+          </div>
+        </section>
+
+        <div class="sim-two-col">
+
+          <section class="panel" aria-labelledby="anim-heading">
+            <h2 class="panel__heading" id="anim-heading">Animation Controls</h2>
+            <div class="sim-panel-body">
+              <div class="button-row sim-button-row">
+                <button type="button" class="button" id="animate-button">start animation</button>
+              </div>
+
+              <fieldset class="control-fieldset">
+                <legend class="control-fieldset__legend">animation mode:</legend>
+                <div class="control-choice sim-choice">
+                  <input type="radio" name="anim-mode" id="mode-continuous" value="continuous" checked>
+                  <label for="mode-continuous">continuous</label>
+                </div>
+                <div class="control-choice sim-choice">
+                  <input type="radio" name="anim-mode" id="mode-step" value="step">
+                  <label for="mode-step">step by day</label>
+                </div>
+              </fieldset>
+
+              <fieldset class="control-fieldset">
+                <legend class="control-fieldset__legend">animation speed:</legend>
+                <div class="control-row sim-slider-row">
+                  <label class="control-row__label sr-only" for="speed-slider">animation speed</label>
+                  <input type="range" id="speed-slider" class="control-row__slider sim-slider"
+                         min="0" max="1000" step="1" value="500">
+                </div>
+                <p class="sim-readout-line"><span class="sim-readout__value" id="ro-speed"></span></p>
+              </fieldset>
+
+              <div class="control-choice sim-choice">
+                <input type="checkbox" id="loop-day">
+                <label for="loop-day">loop day</label>
+              </div>
+              <div class="control-choice sim-choice">
+                <input type="checkbox" id="low-quality">
+                <label for="low-quality">use lower quality graphics when animating to improve performance</label>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel" aria-labelledby="settings-heading">
+            <h2 class="panel__heading" id="settings-heading">General Settings</h2>
+            <div class="sim-panel-body">
+              <div class="control-choice sim-choice">
+                <input type="checkbox" id="show-sundec" checked>
+                <label for="show-sundec">show the sun&rsquo;s declination circle</label>
+              </div>
+              <div class="control-choice sim-choice">
+                <input type="checkbox" id="show-ecliptic" checked>
+                <label for="show-ecliptic">show the ecliptic</label>
+              </div>
+              <div class="control-choice sim-choice">
+                <input type="checkbox" id="show-monthlabels">
+                <label for="show-monthlabels">show month labels</label>
+              </div>
+              <div class="control-choice sim-choice">
+                <input type="checkbox" id="show-underside" checked>
+                <label for="show-underside">show underside of celestial sphere</label>
+              </div>
+              <div class="control-choice sim-choice">
+                <input type="checkbox" id="show-stickfigure" checked>
+                <label for="show-stickfigure">show stickfigure and its shadow</label>
+              </div>
+
+              <fieldset class="control-fieldset">
+                <legend class="control-fieldset__legend">dragging the sun&rsquo;s disk changes the:</legend>
+                <div class="control-choice sim-choice">
+                  <input type="radio" name="sun-drag" id="drag-time" value="timeOfDay" checked>
+                  <label for="drag-time">time of day</label>
+                </div>
+                <div class="control-choice sim-choice">
+                  <input type="radio" name="sun-drag" id="drag-day" value="dayOfYear">
+                  <label for="drag-day">day of year</label>
+                </div>
+              </fieldset>
+
+              <div class="button-row sim-button-row">
+                <button type="button" class="button" id="pause-button" hidden>Pause</button>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <p class="sr-only" id="sr-status" aria-live="polite"></p>
+
+  <script src="foundation/kl-unl.js"></script>
+  <script src="foundation/kl-unl-masthead.js"></script>
+  <script type="module" src="simulation.js"></script>
+</body>
+</html>

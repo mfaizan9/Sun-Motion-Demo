@@ -1,0 +1,355 @@
+/* ==========================================================================
+   Sun Motions Simulator — sim-specific styles only.
+   The shared palette, panels, controls, buttons, focus handling and the
+   responsive grid all come from foundation/kl-unl.css and are NOT overridden
+   here. These rules only add layout the foundation does not provide
+   (the celestial-sphere canvas, the analog clock, the latitude map, the
+   day-of-year timeline ticks, and the aligned readout columns).
+   ========================================================================== */
+
+:root {
+  /* One gap value used for every space between panels — column↔column and
+     panel↕panel — so all spacing is equal. */
+  --sim-gap: 0.9rem;
+}
+
+/* Body copy floor (WCAG-friendly, scales with browser font size). */
+.sim-panel-body,
+.sim-info-sentence,
+.sim-readout,
+.sim-readout-line,
+.control-choice,
+.control-row__label {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.sim-panel-body {
+  padding: 0 1rem 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   Horizon-diagram canvas: keep the original internal coordinate system and
+   let CSS scale it to fit the panel while preserving the square aspect ratio.
+   -------------------------------------------------------------------------- */
+#sphere-canvas {
+  display: block;
+  width: 100%;
+  max-width: 34rem;          /* wider diagram; aspect-ratio keeps it square */
+  margin: 0 auto;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  background: #0b1020;
+  border-radius: 0.25rem;
+  touch-action: none;        /* let pointer drag rotate without scrolling */
+  cursor: grab;
+}
+
+/* Spacing between the left (diagram + info) and right (controls) columns so the
+   control panels never butt against / overlap the diagram and information panels. */
+.app-layout { column-gap: var(--sim-gap); row-gap: var(--sim-gap); align-items: stretch; }
+
+/* Make the two columns fill to the SAME total height: stretch both column
+   wrappers to the taller one, then let the last panel in each column absorb any
+   leftover space so the columns' bottoms line up. */
+.app-layout__left > .panel:last-child,
+.app-layout__right > :last-child { flex-grow: 1; }
+
+/* Desktop/tablet: left column 40%, right column 60% (2fr : 3fr). minmax(0, …)
+   lets each column shrink to its track so content can't overflow into the other
+   column. The foundation's single-column collapse (<=56rem) is left untouched. */
+@media (min-width: 56.0625rem) {
+  .app-layout { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); }
+}
+#sphere-canvas:active { cursor: grabbing; }
+
+/* --------------------------------------------------------------------------
+   Day-of-year strip slider (design adopted from the Big Dipper Clock sim):
+   a bordered bar with the month names INSIDE it, divider lines at month
+   boundaries, and a draggable downward-triangle cursor running through the
+   strip. Implemented as an accessible role="slider" element.
+   -------------------------------------------------------------------------- */
+.doy-slider-wrap { padding: 0.25rem 0 0.4rem; }
+
+.doy-slider {
+  position: relative;
+  height: 2.4rem;
+  margin-top: 1.4rem;            /* room for the triangle handle above the bar */
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 2px;
+  cursor: pointer;
+  touch-action: none;
+}
+.doy-slider:focus-visible {
+  outline-width: 0.125rem;
+  outline-style: solid;
+  outline-color: var(--outline-color, #005fcc);
+  outline-offset: 0.2rem;
+}
+.doy-slider__months { position: absolute; inset: 0; }
+.doy-slider__month {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #000000;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.doy-slider__divider {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 1px;
+  background: #000000;
+  pointer-events: none;
+}
+.doy-slider__cursor {
+  position: absolute;
+  top: -1.1rem;
+  left: 0;
+  width: 1.6rem;                 /* clickable hit area around the handle */
+  height: 3.6rem;               /* triangle + line through the strip */
+  transform: translateX(-50%);
+  pointer-events: auto;
+  cursor: grab;
+  touch-action: none;
+  z-index: 3;
+}
+.doy-slider__cursor:active { cursor: grabbing; }
+.doy-slider__cursor::before {       /* downward-pointing triangle */
+  content: "";
+  position: absolute;
+  left: 50%; top: 0;
+  transform: translateX(-50%);
+  width: 0; height: 0;
+  border-left: 0.6rem solid transparent;
+  border-right: 0.6rem solid transparent;
+  border-top: 0.9rem solid #222;
+}
+.doy-slider__cursor::after {        /* vertical line through the strip */
+  content: "";
+  position: absolute;
+  left: 50%; top: 0.8rem;
+  transform: translateX(-50%);
+  width: 2px; height: 2.7rem;
+  background: #222;
+}
+
+/* --------------------------------------------------------------------------
+   Field rows (month + day; hour:minute; latitude + N/S) — compact boxes
+   whose widths echo the original layout (small day/time, medium month/lat).
+   -------------------------------------------------------------------------- */
+.sim-field-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.sim-entry-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;        /* centre the entry boxes under the legend */
+  gap: 0.3rem 0.4rem;
+  margin-bottom: 0.5rem;
+}
+/* Numeric entry boxes: one shared width; height/border/font come from the
+   foundation .control-row__input rule so every sim's boxes look the same. */
+.sim-num,
+.sim-time-box,
+.sim-lat-box {
+  width: 4.25rem;
+  text-align: center;
+}
+/* Selects styled to match the foundation input boxes (same height/border/font). */
+.sim-select {
+  box-sizing: border-box;
+  height: 2.15rem;
+  font-size: 0.95rem;
+  padding: 0.2rem 0.35rem;
+  color: var(--foreground-color, #1a1a1a);
+  background: var(--background-color, #ffffff);
+  border: var(--border-width, 1px) var(--border-style, solid) var(--border-color, #767676);
+  border-radius: 0;
+  width: 8.5rem;
+}
+.sim-hemi { width: 4.5rem; }     /* the "° N / ° S" hemisphere select */
+.sim-colon { font-size: 1.1rem; font-weight: bold; }
+.sim-entry-suffix {
+  font-variant-numeric: tabular-nums;
+  font-weight: bold;
+  margin-left: 0.35rem;
+}
+
+/* Time and latitude side by side (as in the original), collapsing on narrow.
+   The latitude column gets more room so the world map can be larger. */
+.sim-timeloc-row {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 0.75rem 1rem;
+  align-items: start;
+}
+.sim-tl-cell { padding: 0; }
+
+/* --------------------------------------------------------------------------
+   Analog clock and world map (reused exported bitmap) canvases.
+   -------------------------------------------------------------------------- */
+/* The clock area and the map's outer box share one height and centre their
+   content, so the map's centre lines up with the clock's centre across the two
+   columns. */
+.sim-clock-wrap,
+.lat-map-outer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 11rem;            /* = clock height, so the two centres align */
+  margin: 0.25rem 0 0.4rem;
+}
+.sim-clock {
+  width: 11rem;
+  height: 11rem;
+  max-width: 100%;
+  touch-action: none;
+  cursor: pointer;
+}
+
+/* Latitude world map with a draggable red latitude line (Heliacal Rising design):
+   an <img> map plus a horizontal red line (role="slider") with outward arrowheads
+   that drags vertically. The wrap stays tight to the image so the line aligns. */
+.lat-map-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 18rem;
+}
+#lat-map {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #888;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+.lat-line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0;
+  border-top: 2px solid #ee0a00;
+  transform: translateY(-1px);
+  cursor: ns-resize;
+  outline-offset: 2px;
+}
+.lat-line::before,
+.lat-line::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+.lat-line::before { left: -1px;  border-right: 8px solid #ee0a00; }   /* arrowhead, points left  */
+.lat-line::after  { right: -1px; border-left: 8px solid #ee0a00; }    /* arrowhead, points right */
+
+/* --------------------------------------------------------------------------
+   Information readouts — label column + value column align down the panel,
+   numeric values are not ragged.
+   -------------------------------------------------------------------------- */
+.sim-info-sentence {
+  margin: 0 0 0.85rem;
+}
+.sim-readout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.35rem 1.25rem;
+  margin-bottom: 0.75rem;
+}
+.sim-readout {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 0.5rem;
+  border-bottom: 1px dotted var(--border-color);
+  padding-bottom: 0.15rem;
+}
+.sim-readout__label { font-weight: normal; }
+.sim-readout__value {
+  font-variant-numeric: tabular-nums;
+  font-weight: bold;
+  text-align: right;
+  white-space: nowrap;
+}
+.sim-readout-line {
+  margin: 0.1rem 0 0.4rem;
+  text-align: center;
+}
+.sim-readout-line .sim-readout__value { font-size: 1.2rem; }
+
+/* --------------------------------------------------------------------------
+   Choices (checkbox / radio rows) — consistent spacing & touch targets.
+   -------------------------------------------------------------------------- */
+.sim-choice {
+  align-items: flex-start;     /* top-align the box with its (possibly wrapped) label */
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+.sim-choice input {
+  width: 1.15rem;
+  height: 1.15rem;
+  flex: 0 0 auto;
+  margin-top: 0.15rem;         /* nudge down to meet the first line of the label */
+}
+.sim-button-row { justify-content: center; margin: 0.25rem 0 0.7rem; }
+
+/* Primary buttons: blue background, white text (uses the foundation's button
+   palette variables, which the base .button rule doesn't apply itself). */
+.button {
+  background: var(--button-background-color, #005a9c);
+  color: var(--button-foreground-color, #ffffff);
+  border: 1px solid var(--button-background-color, #005a9c);
+  border-radius: 3px;
+  font-weight: 600;
+}
+.button:hover { filter: brightness(0.92); }
+
+/* --------------------------------------------------------------------------
+   Two control panels side by side under the wider right column; collapses to
+   one column at the foundation's breakpoint and below.
+   -------------------------------------------------------------------------- */
+/* Even vertical spacing between stacked panels, and full-width alignment so the
+   lower panels line up with the panel above them in each column. */
+.app-layout__left,
+.app-layout__right {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sim-gap);
+}
+
+.sim-two-col {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);   /* equal-width panels */
+  gap: var(--sim-gap);
+  align-items: stretch;
+}
+.sim-two-col > .panel { height: 100%; min-width: 0; }
+
+/* Sim-specific breakpoints carrying the layout from tablet down to phone
+   portrait. The foundation already collapses .app-layout at 56rem; here we
+   make the nested two-column control cluster stack as well, and tidy the
+   readout / field grids for narrow widths. */
+@media (max-width: 56rem) {
+  .sim-two-col { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 40rem) {
+  .sim-readout-grid { grid-template-columns: 1fr; }
+  .sim-timeloc-row { grid-template-columns: 1fr; }
+  #sphere-canvas { max-width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #sphere-canvas { cursor: default; }
+}
