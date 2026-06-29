@@ -728,6 +728,7 @@ let canvas, ctx, dpr = 1;
 const clock = {}, mapUI = {};
 let worldImg = null;
 let stickImg = null;
+let shadowImg = null;
 
 function setupCanvas() {
   canvas = document.getElementById('sphere-canvas');
@@ -759,6 +760,12 @@ function render() {
   ctx.translate(CX, CY);
   ctx.lineJoin = 'round'; ctx.lineCap = 'round';
 
+  // Horizon major axis (perpendicular to the projected zenith): the sky fills the
+  // zenith side, the underside the nadir side.
+  const zen = {}; sphere.WtoSz(sphere.parsePoint({ az: 0, alt: 90, r: 1 }), zen);
+  const axisAng = Math.atan2(zen.y, zen.x) + HALF_PI;
+  const skySide = (-zen.x * Math.sin(axisAng) + zen.y * Math.cos(axisAng)) < 0 ? -1 : 1;
+
   const sh = shadingValues();
   const arcs = {};
   for (const key in circles) {
@@ -770,6 +777,12 @@ function render() {
   const scp = scpAxis.segments();
   const ana = master.showAnalemma ? analemma.build(sphere.lat * RAD2DEG, mod(master._day, 1)) : { front: [], back: [] };
 
+  // The sphere itself is clipped to the upper hemisphere when the underside is
+  // hidden; the direction labels are drawn AFTER this clip is lifted so N/E/S/W
+  // stay fully visible around the horizon.
+  ctx.save();
+  if (!sphere.showUnder) clipUpperHemisphere(axisAng, skySide);
+
   // ---- BACK pass (far hemisphere) ----
   drawLineLayer(ncp, 'bE'); drawLineLayer(scp, 'bE');
   drawLineLayer(ncp, 'bI'); drawLineLayer(scp, 'bI');
@@ -777,20 +790,17 @@ function render() {
   drawAnalemma(ana.back);
   drawObjectsForRegion(false);
 
-  // ---- sky tint over the dome ----
-  if (sh.sky > 0) {
-    ctx.beginPath(); ctx.arc(0, 0, R, 0, TWO_PI);
-    ctx.fillStyle = colorHex(12575999); ctx.globalAlpha = sh.sky; ctx.fill(); ctx.globalAlpha = 1;
-  }
+  // ---- underside of the celestial sphere: dark gray; hidden when toggled off ----
+  if (sphere.showUnder) fillHemisphere(axisAng, -skySide, '#3b3f47', 0.88);
+
+  // ---- sky tint over the dome (zenith side) ----
+  if (sh.sky > 0) fillHemisphere(axisAng, skySide, colorHex(12575999), sh.sky);
 
   // ---- horizon plane (green ground ellipse) ----
   drawHorizonPlane();
 
-  // night / twilight darkening
-  if (sh.shade > 0) {
-    ctx.beginPath(); ctx.arc(0, 0, R, 0, TWO_PI);
-    ctx.fillStyle = '#000000'; ctx.globalAlpha = sh.shade; ctx.fill(); ctx.globalAlpha = 1;
-  }
+  // night / twilight darkening (sky side only)
+  if (sh.shade > 0) fillHemisphere(axisAng, skySide, '#000000', sh.shade);
 
   // ---- FRONT pass (near hemisphere) ----
   drawLineLayer(ncp, 'aI'); drawLineLayer(scp, 'aI');
@@ -798,11 +808,14 @@ function render() {
   drawAnalemma(ana.front);
   drawLineLayer(ncp, 'fE'); drawLineLayer(scp, 'fE');
   drawObjectsForRegion(true);
-  drawDirectionLabels();
 
   // sphere outline for definition
   ctx.beginPath(); ctx.arc(0, 0, R, 0, TWO_PI);
   ctx.strokeStyle = 'rgba(255,255,255,0.25)'; ctx.lineWidth = 1; ctx.stroke();
+
+  ctx.restore();                 // lift the upper-hemisphere clip
+
+  drawDirectionLabels();         // N / E / S / W — always fully visible
 
   ctx.restore();
   updateSphereDescription();
@@ -835,6 +848,57 @@ function drawAnalemma(polylines) {
   }
   ctx.strokeStyle = colorHex(16720932); ctx.globalAlpha = 0.7; ctx.lineWidth = 2; ctx.stroke();
   ctx.globalAlpha = 1;
+}
+
+/* Fill one half of the sphere disk, divided by the line through the origin at
+   `axisAng` (the horizon's major axis). `ySide` picks the half, measured in the
+   frame rotated by axisAng. Used for the sky dome and the dark-gray underside. */
+function fillHemisphere(axisAng, ySide, color, alpha) {
+  ctx.save();
+  ctx.beginPath(); ctx.arc(0, 0, R, 0, TWO_PI); ctx.clip();
+  ctx.rotate(axisAng);
+  ctx.fillStyle = color; ctx.globalAlpha = alpha;
+  if (ySide < 0) ctx.fillRect(-R - 2, -R - 2, 2 * R + 4, R + 2);
+  else ctx.fillRect(-R - 2, 0, 2 * R + 4, R + 2);
+  ctx.restore(); ctx.globalAlpha = 1;
+}
+
+/* Clip to the upper hemisphere: the union of the sky-side half-disk and the
+   ground (horizon) ellipse. Everything below the ground's near edge is excluded,
+   so the bottom of the sphere disappears, leaving only the dome + ground. */
+function clipUpperHemisphere(axisAng, skySide) {
+  const start = skySide > 0 ? axisAng : axisAng + PI;
+  const semi = [];
+  const M = 64;
+  for (let i = 0; i <= M; i++) {
+    const a = start + (i / M) * PI;
+    semi.push([R * Math.cos(a), R * Math.sin(a)]);
+  }
+  const ell = [];
+  const N = 96;
+  for (let i = 0; i < N; i++) {
+    const sp = {}; sphere.WtoSz(sphere.parsePoint({ az: i / N * 360, alt: 0, r: 1 }), sp);
+    ell.push([sp.x, sp.y]);
+  }
+  const signedArea = (pts) => {
+    let s = 0;
+    for (let i = 0; i < pts.length; i++) {
+      const p = pts[i], q = pts[(i + 1) % pts.length];
+      s += p[0] * q[1] - q[0] * p[1];
+    }
+    return s;
+  };
+  // Wind both subpaths the same way so the nonzero-winding clip is their UNION
+  // (opposite winding would punch a hole through the ground).
+  if (Math.sign(signedArea(semi)) !== Math.sign(signedArea(ell))) ell.reverse();
+  ctx.beginPath();
+  ctx.moveTo(semi[0][0], semi[0][1]);
+  for (let i = 1; i < semi.length; i++) ctx.lineTo(semi[i][0], semi[i][1]);
+  ctx.closePath();
+  ctx.moveTo(ell[0][0], ell[0][1]);
+  for (let i = 1; i < ell.length; i++) ctx.lineTo(ell[i][0], ell[i][1]);
+  ctx.closePath();
+  ctx.clip();
 }
 
 function drawHorizonPlane() {
@@ -872,8 +936,9 @@ function drawObjectsForRegion(front) {
       ctx.globalAlpha = 1;
     }
   }
-  // Stickfigure + shadow at sphere centre (always "front" region; on the ground)
-  if (front && master.show.stickfigure) drawStickfigure();
+  // Stickfigure + its shadow stand at the centre of the horizon plane (drawn on
+  // top of the ground, in the front pass). Shadow first, figure over it.
+  if (front && master.show.stickfigure) { drawShadow(); drawStickfigure(); }
   // Sun
   const sp = {}; sphere.CtoSz(master.sun, sp);
   const w = {}; sphere.CtoW(master.sun, w);
@@ -892,24 +957,75 @@ function drawSun(x, y, isFront) {
 }
 
 function drawStickfigure() {
-  // observer stands at the centre of the sphere — reuse the original exported
-  // Stickfigure bitmap (feet at the centre, figure standing up).
+  // The observer stands at the centre of the horizon plane (feet at the origin).
+  // The "up" axis (zenith) projects straight up on screen, foreshortened by
+  // cos(viewer-altitude) — so the figure squashes vertically as the disk tilts,
+  // staying planted on the ground (matching the original "absolute" orientation).
+  const scaleY = Math.max(Math.cos(sphere.phi), 0.12);
+  const BASE = 32;
   if (stickImg && stickImg.complete && stickImg.naturalWidth) {
-    const h = 30, w = h * stickImg.naturalWidth / stickImg.naturalHeight;
+    const w = BASE * stickImg.naturalWidth / stickImg.naturalHeight;
+    const h = BASE * scaleY;
     ctx.drawImage(stickImg, -w / 2, -h, w, h);
     return;
   }
   ctx.save();                                                                 // fallback
   ctx.strokeStyle = '#1b1b1b'; ctx.fillStyle = '#1b1b1b'; ctx.lineWidth = 2;
-  const baseY = 0, h = 16;
-  ctx.beginPath(); ctx.arc(0, baseY - h, 3, 0, TWO_PI); ctx.fill();
+  const h = 16 * scaleY;
+  ctx.beginPath(); ctx.arc(0, -h, 3 * scaleY, 0, TWO_PI); ctx.fill();
   ctx.beginPath();
-  ctx.moveTo(0, baseY - h + 3); ctx.lineTo(0, baseY - 5);
-  ctx.moveTo(-4, baseY - 11); ctx.lineTo(4, baseY - 11);
-  ctx.moveTo(0, baseY - 5); ctx.lineTo(-4, baseY);
-  ctx.moveTo(0, baseY - 5); ctx.lineTo(4, baseY);
+  ctx.moveTo(0, -h + 3 * scaleY); ctx.lineTo(0, -5 * scaleY);
+  ctx.moveTo(-4, -11 * scaleY); ctx.lineTo(4, -11 * scaleY);
+  ctx.moveTo(0, -5 * scaleY); ctx.lineTo(-4, 0);
+  ctx.moveTo(0, -5 * scaleY); ctx.lineTo(4, 0);
   ctx.stroke();
   ctx.restore();
+}
+
+/* The observer's shadow: a dark streak on the ground pointing away from the sun,
+   lengthening and fading as the sun gets lower; gone once the sun sets. Mirrors
+   ShadowMaker.as (alpha = 1 - 1/(15·tan(alt)); hidden when the sun is at/below
+   the horizon). */
+function drawShadow() {
+  const alt = master.altitude;
+  if (alt < 1) return;                            // sun at/below horizon: no shadow
+  const t = Math.tan(alt * DEG);
+  let a = 1 - 1 / (15 * t);                        // ShadowMaker.as alpha
+  if (a <= 0.03) return;
+  if (a > 0.6) a = 0.6;
+  let L = 0.5 / t;                                 // shadow length grows as sun lowers
+  if (L > 0.95) L = 0.95; else if (L < 0.07) L = 0.07;
+  const as = master.azimuth + 180;                // shadow points away from the sun
+  // The figure silhouette laid flat on the ground: its "up" axis maps to the
+  // anti-sun ground direction (length L), its width to the perpendicular ground
+  // direction — so the shadow keeps the stick-figure shape.
+  const img = (shadowImg && shadowImg.complete && shadowImg.naturalWidth) ? shadowImg
+    : ((stickImg && stickImg.complete && stickImg.naturalWidth) ? stickImg : null);
+  const tip = {}; sphere.WtoSz(sphere.parsePoint({ az: as, alt: 0, r: L }), tip);
+  if (img) {
+    const W = img.naturalWidth, H = img.naturalHeight;
+    const across = {}; sphere.WtoSz(sphere.parsePoint({ az: as + 90, alt: 0, r: 1 }), across);
+    const am = Math.hypot(across.x, across.y) || 1;
+    const figW = 14;                              // shadow width in px (≈ figure width)
+    const wx = across.x / am * figW, wy = across.y / am * figW;   // width vector
+    const lx = tip.x, ly = tip.y;                                 // length (head) vector
+    // affine map of image pixels -> screen: feet (W/2,H)->(0,0), head (W/2,0)->(lx,ly)
+    const A = wx / W, B = wy / W, C = -lx / H, D = -ly / H;
+    const E = -(A * (W / 2) + C * H), F = -(B * (W / 2) + D * H);
+    ctx.save();
+    ctx.globalAlpha = a;
+    ctx.transform(A, B, C, D, E, F);
+    ctx.drawImage(img, 0, 0, W, H);
+    ctx.restore();
+    ctx.globalAlpha = 1;
+    return;
+  }
+  // fallback streak
+  ctx.save();
+  ctx.rotate(Math.atan2(tip.y, tip.x));
+  ctx.globalAlpha = a; ctx.fillStyle = '#1a1a1a';
+  ctx.beginPath(); ctx.ellipse(Math.hypot(tip.x, tip.y) / 2, 0, Math.hypot(tip.x, tip.y) / 2, 4.5, 0, 0, TWO_PI); ctx.fill();
+  ctx.restore(); ctx.globalAlpha = 1;
 }
 
 function drawDirectionLabels() {
@@ -917,16 +1033,20 @@ function drawDirectionLabels() {
   if (master._latitude === 90) labels = { 0: 'S', 90: 'S', 180: 'S', 270: 'S' };
   else if (master._latitude === -90) labels = { 0: 'N', 90: 'N', 180: 'N', 270: 'N' };
   else labels = { 0: 'N', 90: 'E', 180: 'S', 270: 'W' };
-  ctx.font = '600 13px system-ui, sans-serif';
+  ctx.font = '700 14px system-ui, sans-serif';
   ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.lineJoin = 'round';
+  ctx.globalAlpha = 1;
   for (const az of [0, 90, 180, 270]) {
     const p = sphere.parsePoint({ az: az, alt: 0, r: 1.06 });
     const sp = {}; sphere.WtoSz(p, sp);
-    ctx.globalAlpha = sp.z >= 0 ? 1 : 0.5;
-    ctx.fillStyle = '#f4f4f4';
+    // dark halo + white text so all four stay fully legible over sky, ground or
+    // the dark background (kept fully visible even when the underside is hidden).
+    ctx.lineWidth = 3; ctx.strokeStyle = 'rgba(0,0,0,0.7)';
+    ctx.strokeText(labels[az], sp.x, sp.y);
+    ctx.fillStyle = '#ffffff';
     ctx.fillText(labels[az], sp.x, sp.y);
   }
-  ctx.globalAlpha = 1;
 }
 
 /* ==========================================================================
@@ -1520,10 +1640,13 @@ function init() {
   setupClock();
   setupMap();
 
-  // Reuse the original exported Stickfigure bitmap for the observer.
+  // Reuse the original exported Stickfigure (and its shadow) bitmaps.
   stickImg = new Image();
   stickImg.onload = render;
   stickImg.src = 'assets/stickfigure.png';
+  shadowImg = new Image();
+  shadowImg.onload = render;
+  shadowImg.src = 'assets/stickfigure-shadow.png';
 
   // initial state
   sphere.setViewerAzimuth(215);

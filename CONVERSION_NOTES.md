@@ -161,14 +161,23 @@ support (arrows ±0.1°, PageUp/Down ±1°, Home/End = ±90°).
    with column spacing; the two control panels are equal width. All controls are
    keyboard operable and the live region speaks full units.
 3. **Sky / twilight shading is simplified.** The original composited six masked
-   gradient layers (inner/outer × front/back × above/below). The port reproduces
-   the visible result — a sun-altitude-driven blue sky dome (`skyBack` alpha
-   `80·(alt/90)^0.15`) and a twilight/night darkening (`horizonShade` alpha
-   `min(40, 40·(1−alt/90)^4)`) — as two tints around the projected horizon plane,
-   rather than the full six-layer mask stack. Geometry and physics are unchanged.
-4. **Stick figure / shadow** are drawn as a simple figure and shadow rather than
-   reproducing the exported `Stickfigure` symbol art (which is decorative); the
-   shadow direction/visibility still follow the sun.
+   gradient layers. The port splits the sphere disk along the horizon's major axis
+   and fills the zenith side with a sun-altitude-driven blue sky dome (`skyBack`
+   alpha `80·(alt/90)^0.15`, plus `horizonShade` darkening
+   `min(40, 40·(1−alt/90)^4)`) and the nadir side with the **dark-gray underside**
+   of the celestial sphere. When *show underside of celestial sphere* is
+   unchecked, the whole diagram is clipped to the upper hemisphere (sky dome +
+   ground disk), so the bottom of the sphere disappears entirely. Geometry and
+   physics are unchanged.
+4. **Stick figure + shadow.** The observer reuses the exported `Stickfigure`
+   bitmap, standing at the centre of the horizon plane; it foreshortens vertically
+   by `cos(viewer-altitude)` so it stays planted as the disk tilts. Its shadow
+   reuses the exported `Stickfigure Shadow` silhouette, projected flat onto the
+   ground pointing away from the sun (an affine map of the image onto the anti-sun
+   and perpendicular ground directions) so it keeps the figure shape, lengthening
+   and fading as the sun lowers and disappearing once the sun sets (per
+   `ShadowMaker.as`,
+   `alpha = 1 − 1/(15·tan(altitude))`).
 5. **Animation in a headless preview.** `requestAnimationFrame` is throttled in
    headless capture environments, so automated screenshots can't show motion; in a
    real browser the animation runs. The stepping logic is a direct port of

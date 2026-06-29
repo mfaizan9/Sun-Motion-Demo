@@ -49,7 +49,7 @@ class KLUNLMasthead extends HTMLElement {
     const hasHelpContent = ( mastheadData.help && mastheadData.help.content.trim() !== "" );
 
     this.shadowRoot.innerHTML = `
-      <link href="../foundation/kl-unl.css" type="text/css" rel="stylesheet" media="all">
+      <link href="foundation/kl-unl.css" type="text/css" rel="stylesheet" media="all">
       <style>
         :host {
           display:             block;
