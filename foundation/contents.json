@@ -16,7 +16,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "altazimuth": {
     "meta": {
@@ -29,12 +29,11 @@
         "content": "<p>This demonstrator illustrates the horizon coordinate system, where altitude and azimuth define an object's position in the sky.</p>"
       },
       "about": {
-
         "title": "About this Demonstrator",
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "antipodesexplorer": {
     "meta": {
@@ -51,7 +50,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This explorer has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "balloon": {
     "meta": {
@@ -68,7 +67,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "basketball": {
     "meta": {
@@ -85,7 +84,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "bbexplorer": {
     "meta": {
@@ -120,7 +119,7 @@
       }
     }
   },
-  
+
   "blinkComparatorSimulator": {
     "meta": {
       "title": "Blink Comparator Simulator",
@@ -136,7 +135,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "buckets": {
     "meta": {
@@ -153,7 +152,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "ca_extrasolarplanets_graph": {
     "meta": {
@@ -170,7 +169,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This explorer has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "ca_extrasolarplanets_starwobble": {
     "meta": {
@@ -187,7 +186,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This explorer has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "ce_hc": {
     "meta": {
@@ -204,7 +203,7 @@
         "content": "<p>This simulator is part of the Rotating Sky Module of the <a href=\"https://astro.unl.edu/naap/\">Nebraska Astronomy Applet Project. Supporting materials and additional astronomy education resources can be found there.</p><p>This explorer has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "celestialhorizon": {
     "meta": {
@@ -221,7 +220,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "celhorcomp": {
     "meta": {
@@ -238,7 +237,7 @@
         "content": "<p>This explorer is part of the Rotating Sky Module of the <a href=\"https://astro.unl.edu/naap/\">Nebraska Astronomy Applet Project. Supporting materials and additional astronomy education resources can be found there.</p><p>This explorer has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "centerofmass": {
     "meta": {
@@ -272,7 +271,7 @@
         "content": "<p>This simulator is part of the Cosmic Distance Ladder Module of the <a href=\"https://astro.unl.edu/naap/\">Nebraska Astronomy Applet Project. Supporting materials and additional astronomy education resources can be found there.</p><p>This explorer has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "configurationssimulator": {
     "meta": {
@@ -289,7 +288,7 @@
         "content": "<p>This simulator is part of the Solar System Models Module of the <a href=\"https://astro.unl.edu/naap/\">Nebraska Astronomy Applet Project. Supporting materials and additional astronomy education resources can be found there.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "daylighthoursexplorer": {
     "meta": {
@@ -306,7 +305,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This explorer has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "daylightsimulator": {
     "meta": {
@@ -323,7 +322,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "dipperclock": {
     "meta": {
@@ -341,7 +340,7 @@
       }
     }
   },
-  
+
   "dopplershift": {
     "meta": {
       "title": "Doppler Shift Demonstrator",
@@ -357,7 +356,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "drivingthroughsnow": {
     "meta": {
@@ -374,7 +373,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "earthorbitplot": {
     "meta": {
@@ -391,7 +390,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This plot has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "eclipticsimulator": {
     "meta": {
@@ -408,7 +407,7 @@
         "content": "<p>This simulator is part of the Basic Coordinates and Seasons Module of the <a href=\"https://astro.unl.edu/naap/\">Nebraska Astronomy Applet Project. Supporting materials and additional astronomy education resources can be found there. </p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "eclipsetable": {
     "meta": {
@@ -425,7 +424,7 @@
         "content": "<p>Eclipse predictions by Fred Espenak, NASA/GSFC.</p><p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This table has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "eclipsingbinarysim": {
     "meta": {
@@ -443,7 +442,7 @@
       }
     }
   },
-  
+
   "ellipsedemo": {
     "meta": {
       "title": "Eccentricity Demonstrator",
@@ -459,7 +458,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "emspectrum": {
     "meta": {
@@ -476,7 +475,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This explorer has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "filters": {
     "meta": {
@@ -510,7 +509,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This explorer has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "fullmoondec": {
     "meta": {
@@ -527,7 +526,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "fusion01": {
     "meta": {
@@ -544,7 +543,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This animation has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "fusion02": {
     "meta": {
@@ -561,7 +560,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This animation has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "galacticredshift": {
     "meta": {
@@ -578,7 +577,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "gasRetentionPlot": {
     "meta": {
@@ -595,7 +594,7 @@
         "content": "<p>This plot is part of the Atmospheric Retention Module of the <a href=\"https://astro.unl.edu/naap/\">Nebraska Astronomy Applet Project. Supporting materials and additional astronomy education resources can be found there.</p><p>This plot has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "gasRetentionSimulator": {
     "meta": {
@@ -612,7 +611,7 @@
         "content": "<p>This simulator is part of the Atmospheric Retention Module of the <a href=\"https://astro.unl.edu/naap/\">Nebraska Astronomy Applet Project. Supporting materials and additional astronomy education resources can be found there.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "gravalgebra": {
     "meta": {
@@ -629,7 +628,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "gravcalc": {
     "meta": {
@@ -646,7 +645,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This calculator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "hammerthrower": {
     "meta": {
@@ -663,7 +662,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This explorer has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "heliacalrisingsim": {
     "meta": {
@@ -680,7 +679,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "horizon": {
     "meta": {
@@ -697,7 +696,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "hrExplorer": {
     "meta": {
@@ -715,7 +714,7 @@
       }
     }
   },
-  
+
   "hydrogenatom": {
     "meta": {
       "title": "Hydrogen Atom Simulator",
@@ -748,7 +747,7 @@
         "content": "<p>This simulator is part of the Planetary Orbit Simulator Module of the <a href=\"https://astro.unl.edu/naap/\">Nebraska Astronomy Applet Project. Supporting materials and additional astronomy education resources can be found there.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "keplers_third": {
     "meta": {
@@ -765,7 +764,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This calculator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "latsim": {
     "meta": {
@@ -816,7 +815,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "longlat": {
     "meta": {
@@ -833,7 +832,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "lookbacktimesim": {
     "meta": {
@@ -850,8 +849,8 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
-  
+  },
+
   "lunar_phaser": {
     "meta": {
       "title": "Lunar Phase Vocabulary",
@@ -867,7 +866,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "lunarphasequizzer": {
     "meta": {
@@ -884,7 +883,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This quizzer has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "marsorbit": {
     "meta": {
@@ -901,7 +900,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "meltednail": {
     "meta": {
@@ -918,7 +917,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "milkyWayHabitability": {
     "meta": {
@@ -935,7 +934,7 @@
         "content": "<p>This simulator is part of the Extrasolar Biology Module of the <a href=\"https://astro.unl.edu/naap/\">Nebraska Astronomy Applet Project. Supporting materials and additional astronomy education resources can be found there.</p><p>This explorer has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by the Nebraska Space Grant.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "moonbisector": {
     "meta": {
@@ -952,7 +951,7 @@
         "content": "<p>This simulator is part of the Lunar Phases Module of the <a href=\"https://astro.unl.edu/naap/\">Nebraska Astronomy Applet Project. Supporting materials and additional astronomy education resources can be found there.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "mooninc": {
     "meta": {
@@ -969,7 +968,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "moonphases": {
     "meta": {
@@ -986,7 +985,7 @@
         "content": "<p>This simulator is part of the Lunar Phases Module of the <a href=\"https://astro.unl.edu/naap/\">Nebraska Astronomy Applet Project. Supporting materials and additional astronomy education resources can be found there.</p><p>Dutch translation by Piet Sulman, Utrecht University, The Netherlands.</p><p>Greek translation by Dimitris Hall.</p><p>Turkish translation by Mustafa Nazmi Özdemir.</p><p>Slovenian translation by mag. Joze Pernar.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "meridaltdiagram": {
     "meta": {
@@ -1020,7 +1019,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This explorer has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "moonphases": {
     "meta": {
@@ -1037,7 +1036,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "obliquity": {
     "meta": {
@@ -1054,7 +1053,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "parallaxdiag": {
     "meta": {
@@ -1071,7 +1070,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This calculator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "parallaxExplorer": {
     "meta": {
@@ -1088,7 +1087,7 @@
         "content": "<p>This simulator is part of the Cosmic Distance Ladder Module of the <a href=\"https://astro.unl.edu/naap/\">Nebraska Astronomy Applet Project. Supporting materials and additional astronomy education resources can be found there.</p><p>This explorer has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "pathtracer": {
     "meta": {
@@ -1105,7 +1104,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "phaseDemonstrator": {
     "meta": {
@@ -1122,7 +1121,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "photometrySimulator": {
     "meta": {
@@ -1139,7 +1138,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "positionsdemonstrator": {
     "meta": {
@@ -1156,7 +1155,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "ptolemaic": {
     "meta": {
@@ -1173,7 +1172,7 @@
         "content": "<p>This simulator is part of the Solar System Models Module of the <a href=\"https://astro.unl.edu/naap/\">Nebraska Astronomy Applet Project. Supporting materials and additional astronomy education resources can be found there.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "registrationSimulator": {
     "meta": {
@@ -1190,7 +1189,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "renaissancePtolemaic": {
     "meta": {
@@ -1207,7 +1206,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "pulsarPeriodSim001": {
     "meta": {
@@ -1224,7 +1223,7 @@
         "content": "<p>This simulator is part of the Extrasolar Planets Module of the <a href=\"https://astro.unl.edu/naap/\">Nebraska Astronomy Applet Project. Supporting materials and additional astronomy education resources can be found there.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "radecdemo": {
     "meta": {
@@ -1241,7 +1240,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "radialvelocitydemo": {
     "meta": {
@@ -1258,7 +1257,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "radialvelocitysimulator": {
     "meta": {
@@ -1275,7 +1274,7 @@
         "content": "<p>This simulator is part of the Extrasolar Planets Module of the <a href=\"https://astro.unl.edu/naap/\">Nebraska Astronomy Applet Project. Supporting materials and additional astronomy education resources can be found there.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "retrograde": {
     "meta": {
@@ -1292,7 +1291,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "scaleheight": {
     "meta": {
@@ -1309,7 +1308,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "seasons_ecliptic": {
     "meta": {
@@ -1326,7 +1325,7 @@
         "content": "<p>This simulator is part of the Basic Coordinates and Seasons Module of the <a href=\"https://astro.unl.edu/naap/\">Nebraska Astronomy Applet Project. Supporting materials and additional astronomy education resources can be found there.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "seasonsim": {
     "meta": {
@@ -1343,7 +1342,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "shadowsim": {
     "meta": {
@@ -1360,7 +1359,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "siderealSolarTime": {
     "meta": {
@@ -1377,7 +1376,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "siderealTimeAndHourAngleDemo": {
     "meta": {
@@ -1394,7 +1393,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "smallAngleDemo": {
     "meta": {
@@ -1411,7 +1410,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "snCurveExplorer": {
     "meta": {
@@ -1428,7 +1427,7 @@
         "content": "<p>This simulator is part of the Cosmic Distance Ladder Module of the <a href=\"https://astro.unl.edu/naap/\">Nebraska Astronomy Applet Project. Supporting materials and additional astronomy education resources can be found there.</p><p>This explorer has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "snellslaw": {
     "meta": {
@@ -1445,7 +1444,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "solarsystemproperties": {
     "meta": {
@@ -1462,7 +1461,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This explorer has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "spectroparallax": {
     "meta": {
@@ -1479,7 +1478,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "spectrum010": {
     "meta": {
@@ -1496,7 +1495,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This explorer has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "stellarHabitableZone": {
     "meta": {
@@ -1505,7 +1504,7 @@
     },
     "masthead": {
       "help": {
-        "title": "Help and Instructions", 
+        "title": "Help and Instructions",
         "content": "<p>This simulator demonstrates the location and evolution of the stellar habitable zone, the region around a star where surface water may exist on an earth-like planet.</p>"
       },
       "about": {
@@ -1513,7 +1512,7 @@
         "content": "<p>This simulator is part of the Habitable Zones Lab of the <a href=\"https://astro.unl.edu/naap/\">Nebraska Astronomy Applet Project. Supporting materials and additional astronomy education resources can be found there.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by the Nebraska Space Grant.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "stellarlum": {
     "meta": {
@@ -1530,7 +1529,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This calculator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "stellarmag": {
     "meta": {
@@ -1547,7 +1546,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This explorer has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "stellarvel": {
     "meta": {
@@ -1564,7 +1563,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This calculator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "sunmotionsoverview": {
     "meta": {
@@ -1581,7 +1580,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This overview has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "sunmotions": {
     "meta": {
@@ -1595,10 +1594,10 @@
       },
       "about": {
         "title": "About this Simulator",
-        "content": "<p>This simulator is part of the Motions of the Sun Module of the <a href=\"https://astro.unl.edu/naap/\">Nebraska Astronomy Applet Project. Supporting materials and additional astronomy education resources can be found there.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
+        "content": "<p>This simulator is part of the Motions of the Sun Module of the <a href=\"https://astro.unl.edu/naap/\">Nebraska Astronomy Applet Project</a>. Supporting materials and additional astronomy education resources can be found there.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "sunpaths": {
     "meta": {
@@ -1615,7 +1614,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "sunsrays": {
     "meta": {
@@ -1632,7 +1631,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "synodiccalculator": {
     "meta": {
@@ -1649,7 +1648,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This calculator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "synodiclag": {
     "meta": {
@@ -1666,7 +1665,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "telescope10": {
     "meta": {
@@ -1683,7 +1682,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "threeviewsspectra": {
     "meta": {
@@ -1700,7 +1699,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "tidesim": {
     "meta": {
@@ -1717,7 +1716,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "trafficdensity": {
     "meta": {
@@ -1734,7 +1733,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "transitmovie": {
     "meta": {
@@ -1751,7 +1750,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "transitsimulator": {
     "meta": {
@@ -1768,7 +1767,7 @@
         "content": "<p>This simulator is part of the Extrasolar Planets Module of the <a href=\"https://astro.unl.edu/naap/\">Nebraska Astronomy Applet Project. Supporting materials and additional astronomy education resources can be found there.</p><p>This simulator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Initial funding for this work was provided by NSF grants #0231270 and/or #0404988.</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "variableStarPhotometryAnalyzer": {
     "meta": {
@@ -1785,7 +1784,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This analyzer has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "venusphases": {
     "meta": {
@@ -1802,7 +1801,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "wagonwheel": {
     "meta": {
@@ -1819,7 +1818,7 @@
         "content": "<p>For additional astronomy education materials please visit <a href=\"https://astro.unl.edu/\">Astronomy Education</a> at the University of Nebraska-Lincoln.</p><p>This demonstrator has been modernized by the AAS Applet Task Force to meet modern web accessibility standards (WCAG 2.1 AA).</p><p>Permission is granted to use these files for noncommercial purposes as long as they remain unmodified.</p>"
       }
     }
-  }, 
+  },
 
   "zodiac": {
     "meta": {
@@ -1838,4 +1837,3 @@
     }
   }
 }
-
