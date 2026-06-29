@@ -1411,7 +1411,8 @@ function canvasToStage(ev) {
 }
 
 let sunHover = false;
-let dragMode = null;          // 'view' | 'sun'
+let dragMode = null;          // 'view' | 'sun' — active pointer drag
+let canvasFocus = 'view';     // 'view' | 'sun' — what the arrow keys control
 let dragStart = null;
 let sunHourOffset = 0;
 
@@ -1423,10 +1424,11 @@ function hitSun(p) {
 
 function wireCanvas() {
   canvas.addEventListener('pointerdown', (ev) => {
-    canvas.setPointerCapture(ev.pointerId);
+    canvas.focus();                         // clicking focuses the diagram for arrow keys
+    try { canvas.setPointerCapture(ev.pointerId); } catch (e) {}
     const p = canvasToStage(ev);
     if (hitSun(p)) {
-      dragMode = 'sun';
+      dragMode = 'sun'; canvasFocus = 'sun';   // arrow keys now move the sun
       if (master.sunDragMode === 'timeOfDay') {
         const cel = sphere.screenToCelestial(p.x, p.y);
         sunHourOffset = cel.ra - master.rightAscension;
@@ -1434,7 +1436,7 @@ function wireCanvas() {
       if (master.animationState) pauseDuringDrag();
     } else {
       const d = Math.sqrt(p.x * p.x + p.y * p.y);
-      dragMode = 'view';
+      dragMode = 'view'; canvasFocus = 'view';  // arrow keys now rotate the view
       dragStart = { x: p.x, y: p.y, theta: sphere.theta, phi: sphere.phi };
       if (d < sphere.r && master.animationState) pauseDuringDrag();
     }
@@ -1470,8 +1472,34 @@ function wireCanvas() {
   canvas.addEventListener('pointerup', end);
   canvas.addEventListener('pointercancel', end);
 
-  // Keyboard rotation of the view
+  // Keyboard: after clicking the sun, arrow keys MOVE the sun (change time of day
+  // or day of year, per the drag-mode setting); otherwise they ROTATE the view.
   canvas.addEventListener('keydown', (ev) => {
+    if (canvasFocus === 'sun') {
+      if (master.animationState) return;
+      let used = true;
+      if (master.sunDragMode === 'timeOfDay') {
+        const m = 1 / (24 * 60);                 // one minute
+        switch (ev.key) {
+          case 'ArrowLeft': case 'ArrowDown': master.setTimeOfDay(master._tod - m); break;
+          case 'ArrowRight': case 'ArrowUp': master.setTimeOfDay(master._tod + m); break;
+          case 'PageDown': master.setTimeOfDay(master._tod - 1 / 24); break;
+          case 'PageUp': master.setTimeOfDay(master._tod + 1 / 24); break;
+          default: used = false;
+        }
+      } else {
+        switch (ev.key) {
+          case 'ArrowLeft': case 'ArrowDown': master.setDayOfYear(master._doy - 1); break;
+          case 'ArrowRight': case 'ArrowUp': master.setDayOfYear(master._doy + 1); break;
+          case 'PageDown': master.setDayOfYear(master._doy - 7); break;
+          case 'PageUp': master.setDayOfYear(master._doy + 7); break;
+          default: used = false;
+        }
+      }
+      if (used) { ev.preventDefault(); announceState(); }
+      return;
+    }
+    // view rotation
     let used = true;
     const stepA = 5, stepP = 5;
     switch (ev.key) {
